@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:elements": "ng build custom-element --prod --output-hashing none && node build-script.js"
   },
   "private": true,
   "dependencies": {
@@ -15,10 +16,15 @@
     "@angular/common": "~10.2.0",
     "@angular/compiler": "~10.2.0",
     "@angular/core": "~10.2.0",
+    "@angular/elements": "^10.2.3",
     "@angular/forms": "~10.2.0",
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
+    "@webcomponents/custom-elements": "^1.4.3",
+    "concat": "^1.0.3",
+    "document-register-element": "^1.7.2",
+    "fs-extra": "^9.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

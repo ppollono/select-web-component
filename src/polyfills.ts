@@ -61,3 +61,9 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+import 'document-register-element';
+
+/***************************************************************************************************
+ * support for IE11
+ */
+import '@webcomponents/custom-elements/custom-elements.min';

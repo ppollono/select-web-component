@@ -1,16 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
-import { AppComponent } from './app.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    DropdownComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [
+    DropdownComponent
+  ]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) { }
+  ngDoBootstrap() {
+    // array of tuples containing component and html name to be used in createCustomElement
+    const elements: any[] = [
+      [DropdownComponent, 'my-dropdown']
+    ];
+    for (const [component, name] of elements) {
+      const el = createCustomElement(component, { injector: this.injector });
+      customElements.define(name, el);
+    }
+  }
+}

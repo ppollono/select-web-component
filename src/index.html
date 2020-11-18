@@ -1,13 +1,45 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>CustomElement</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    my-dropdown {
+      --my-max-width: 200px;
+      --header-color: green;
+      --hover-header-color: lightblue;
+    }
+  </style>
 </head>
+
 <body>
-  <app-root></app-root>
+  <my-dropdown></my-dropdown>
 </body>
+
 </html>
+<script defer>
+  const object = [
+    {
+      label: 'Spiderman',
+      publisher: 'Marvel'
+    },
+    {
+      label: 'Batman',
+      publisher: 'DC'
+    },
+    {
+      label: 'Saga',
+      publisher: 'Image Comics'
+    },
+    {
+      label: 'Hellboy',
+      publisher: 'Dark Horse Comics'
+    }
+  ];
+  const el = document.querySelector('my-dropdown');
+  el.listItems = object;
+</script>

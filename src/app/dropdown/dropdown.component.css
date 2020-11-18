@@ -1,0 +1,15 @@
+:host {
+    font-size: 20px;
+}
+
+.dropdown {
+    max-width: var(--my-max-width, 350px);
+}
+
+.dropdown__header {
+    border-bottom: 1px solid var(--header-color, var(--primary-shade));
+}
+
+.dropdown__header:hover {
+    --header-color: var(--hover-header-color, var(--secondary));
+}

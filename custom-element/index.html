@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testing our custom element</title>
+    <base href="/">
+</head>
+
+<body>
+    <my-dropdown></my-dropdown>
+
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/custom-element.js"></script>
+</body>
+<script defer>
+    const object = [{
+        label: 'Spiderman',
+        publisher: 'Marvel'
+    }, {
+        label: 'Batman',
+        publisher: 'DC'
+    }, {
+        label: 'Saga',
+        publisher: 'Image Comics'
+    }, {
+        label: 'Hellboy',
+        publisher: 'Dark Horse Comics'
+    }];
+    const el = document.querySelector('my-dropdown');
+    el.listItems = object;
+
+    el.addEventListener('selectedItem', (event) => {
+        console.log(event);
+    })
+</script>
+
+</html>
